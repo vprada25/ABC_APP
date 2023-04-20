@@ -10,11 +10,13 @@ class AuthBackground extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: double.infinity,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage('assets/wall.jpg'), fit: BoxFit.cover),
+      ),
       child: Stack(
         children: [
-          _PurpleBox(),
-          _HeaderIcon(),
-          this.child,
+          child,
         ],
       ),
     );
@@ -28,7 +30,8 @@ class _HeaderIcon extends StatelessWidget {
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.only(top: 100),
-        child: const Icon(Icons.person_pin, color: Colors.white, size: 100),
+        child:
+            const Icon(Icons.accessibility_new, color: Colors.white, size: 100),
       ),
     );
   }
@@ -40,7 +43,7 @@ class _PurpleBox extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
-      height: size.height * 0.4,
+      height: size.height * 0.5,
       decoration: _purpleBackground(),
       child: Stack(
         children: [

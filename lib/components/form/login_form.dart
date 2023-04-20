@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../providers/login_form_provider.dart';
 import '../../ui/input_decorations.dart';
+import '../../services/services.dart';
 import '../../utils/functions.dart';
 
 class LoginForm extends StatelessWidget {
@@ -38,24 +39,53 @@ class LoginForm extends StatelessWidget {
               validator: (value) => Functions.validatePassword(value!)),
           sizeBoxing,
           MaterialButton(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              disabledColor: Colors.grey,
-              elevation: 0,
-              color: Colors.lightBlue,
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
-                child: const Text(
-                  'Ingresar',
-                  style: TextStyle(color: Colors.white),
-                ),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            disabledColor: Colors.grey,
+            elevation: 0,
+            color: Colors.lightBlue,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+              child: const Text(
+                'Ingresar',
+                style: TextStyle(color: Colors.white),
               ),
-              onPressed: () {
-                if (!loginForm.isValidForm()) return;
+            ),
+            onPressed: loginForm.isLoading
+                ? null
+                : () async {
+                    FocusScope.of(context).unfocus();
 
-                Navigator.pushReplacementNamed(context, 'home');
-              })
+                    final authService =
+                        Provider.of<AuthService>(context, listen: false);
+
+                    if (!loginForm.isValidForm()) return;
+
+                    loginForm.isLoading = true;
+
+                    final String? errorMessage = await authService.login(
+                        loginForm.email, loginForm.password);
+
+                    if (errorMessage == null) {
+                      Navigator.pushReplacementNamed(context, 'home');
+                    } else {
+                      NotificationsService.showSnackbar(errorMessage);
+                      loginForm.isLoading = false;
+                    }
+                  },
+          ),
+          sizeBoxing,
+          TextButton(
+              onPressed: () =>
+                  Navigator.pushReplacementNamed(context, 'register'),
+              style: ButtonStyle(
+                  overlayColor:
+                      MaterialStateProperty.all(Colors.indigo.withOpacity(0.1)),
+                  shape: MaterialStateProperty.all(StadiumBorder())),
+              child: Text(
+                '¿Crear una nueva cuenta?',
+                style: TextStyle(fontSize: 18, color: Colors.black87),
+              )),
         ]));
   }
 }

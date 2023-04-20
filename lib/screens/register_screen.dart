@@ -29,17 +29,6 @@ class RegisterScreen extends StatelessWidget {
             ],
           )),
           sizeBoxing,
-          TextButton(
-              onPressed: () => Navigator.pushReplacementNamed(context, 'login'),
-              style: ButtonStyle(
-                  overlayColor:
-                      MaterialStateProperty.all(Colors.indigo.withOpacity(0.1)),
-                  shape: MaterialStateProperty.all(StadiumBorder())),
-              child: Text(
-                '¿Ya tienes una cuenta?',
-                style: TextStyle(fontSize: 18, color: Colors.black87),
-              )),
-          sizeBoxing,
         ],
       ),
     )));
