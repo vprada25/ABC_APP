@@ -29,13 +29,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'ABC App',
-        initialRoute: 'login',
+        initialRoute: 'home',
         routes: {
-          'login': (context) => const LoginScreen(),
-          'register': (context) => const RegisterScreen(),
+          /*   'login': (context) => const LoginScreen(),
+          'register': (context) => const RegisterScreen(), */
           'home': (context) => const HomeScreen(),
           'check': (context) => const CheckAuthScreen(),
           'welcome': (context) => const WelcomeScreen(),
+          'initial': (context) => const InitialPlay(),
+          'quiz': (context) => QuizScreen(),
         },
         theme: ThemeData.light().copyWith(
           scaffoldBackgroundColor: Colors.grey[300],

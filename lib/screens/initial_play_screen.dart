@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:seminario_app/widgets/widgets.dart';
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+import '../widgets/widgets.dart';
+
+class InitialPlay extends StatelessWidget {
+  const InitialPlay({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: AuthBackground(
             child: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          _infoWidget(context),
-          const SizedBox(height: 40),
-        ],
-      ),
-    )));
+                child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        _containerNamePlayer(context),
+      ],
+    ))));
   }
 }
 
-_infoWidget(BuildContext context) {
+_containerNamePlayer(BuildContext context) {
   return Container(
       alignment: Alignment.center,
       width: 400,
@@ -33,23 +32,25 @@ _infoWidget(BuildContext context) {
         children: [
           Image.asset("assets/logo_app.png", width: 100, height: 100),
           const Text(
-            "Bienvenido a ABC App",
+            "Estas Listo Para Jugar y Aprender?",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 26,
               fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(height: 20),
-          const Text(
-            "Estas listo para empezar este hermoso viaje de aprender mientras juegas?",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          const TextField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              hintText: "Ingrese su nombre",
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+              ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           _buttonWidget(context)
         ],
       ));
@@ -58,14 +59,15 @@ _infoWidget(BuildContext context) {
 _buttonWidget(BuildContext context) {
   return MaterialButton(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-    disabledColor: Colors.grey,
-    color: Colors.indigoAccent,
+    elevation: 0,
     minWidth: 400,
     height: 50,
+    disabledColor: Colors.grey,
+    color: Colors.indigoAccent,
     onPressed: () {
-      Navigator.pushReplacementNamed(context, 'initial');
+      Navigator.pushReplacementNamed(context, 'quiz');
     },
-    child: const Text('Comencemos',
+    child: const Text('Comenzar a jugar',
         style: TextStyle(
           color: Colors.white,
           fontSize: 20,
