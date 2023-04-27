@@ -1,16 +1,20 @@
-# seminario_app
+# Seminario APP
 
-A new Flutter project.
+Aplicacion para el seminario de software educativo, en el cual se busca fortalecer la enseñanza y el aprendizaje del abecedario en el idioma ingles.
 
-## Getting Started
+## Clonar el repositorio
 
-This project is a starting point for a Flutter application.
+```bash
+git clone https://github.com/vprada25/ABC_APP.git
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Realizado por:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+Victor Alejandro Prada Noreña - Universidad de la Amazonia
+Omar Fino Florez - Universidad de la Amazonia
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
