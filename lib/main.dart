@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           'check': (context) => const CheckAuthScreen(),
           'welcome': (context) => const WelcomeScreen(),
           'initial': (context) => const InitialPlay(),
-          'quiz': (context) => QuizScreen(),
+          'quiz': (context) => const QuizScreen(),
         },
         theme: ThemeData.light().copyWith(
           scaffoldBackgroundColor: Colors.grey[300],

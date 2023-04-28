@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:seminario_app/models/models.dart';
 import 'package:seminario_app/widgets/widgets.dart';
@@ -32,6 +33,8 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   _questionWidget() {
+    AudioPlayer audioPlayer = AudioPlayer();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -46,16 +49,33 @@ class _QuizScreenState extends State<QuizScreen> {
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(children: [
-              Image.asset("assets/logo_app.png", width: 100, height: 100),
-              Text(
-                "Pregunta ${currentQuestionIndex + 1}/${questionList.length.toString()}",
-                style: const TextStyle(
-                  color: Colors.indigoAccent,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
+              Image.asset("assets/images/logo_app.png",
+                  width: 100, height: 100),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Pregunta ${currentQuestionIndex + 1}/${questionList.length.toString()}",
+                    style: const TextStyle(
+                      color: Colors.indigoAccent,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  MaterialButton(
+                    onPressed: () async {
+                      await playSound(audioPlayer,
+                          questionList[currentQuestionIndex].audioPath);
+                    },
+                    color: Colors.indigoAccent,
+                    shape: const CircleBorder(),
+                    child: const Icon(
+                      Icons.audiotrack_sharp,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
               ),
-              const SizedBox(height: 20),
               Text(
                 questionList[currentQuestionIndex].questionText,
                 style: const TextStyle(
@@ -67,6 +87,10 @@ class _QuizScreenState extends State<QuizScreen> {
             ])),
       ],
     );
+  }
+
+  Future<void> playSound(AudioPlayer audioPlayer, String path) {
+    return audioPlayer.play(AssetSource(path));
   }
 
   _answerList() {

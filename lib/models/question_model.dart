@@ -1,8 +1,9 @@
 class Question {
   final String questionText;
+  final String audioPath;
   final List<Answer> answersList;
 
-  Question(this.questionText, this.answersList);
+  Question(this.questionText, this.answersList, this.audioPath);
 }
 
 class Answer {
@@ -24,6 +25,7 @@ List<Question> getQuestions() {
       Answer("repuesta", true),
       Answer("repuesta", false),
     ],
+    "sounds/a.mp3",
   ));
 
   list.add(Question(
@@ -34,6 +36,7 @@ List<Question> getQuestions() {
       Answer("repuesta", false),
       Answer("repuesta", false),
     ],
+    "sounds/b.mp3",
   ));
 
   list.add(Question(
@@ -44,6 +47,7 @@ List<Question> getQuestions() {
       Answer("repuesta", false),
       Answer("repuesta", true),
     ],
+    "sounds/c.mp3",
   ));
 
   list.add(Question(
@@ -52,6 +56,39 @@ List<Question> getQuestions() {
       Answer("repuesta", true),
       Answer("repuesta", false),
     ],
+    "sounds/d.mp3",
+  ));
+  list.add(Question(
+    "Pregunta 5?",
+    [
+      Answer("repuesta", true),
+      Answer("repuesta", false),
+    ],
+    "sounds/e.mp3",
+  ));
+  list.add(Question(
+    "Pregunta 6?",
+    [
+      Answer("repuesta", true),
+      Answer("repuesta", false),
+    ],
+    "sounds/f.mp3",
+  ));
+  list.add(Question(
+    "Pregunta 7?",
+    [
+      Answer("repuesta", true),
+      Answer("repuesta", false),
+    ],
+    "sounds/g.mp3",
+  ));
+  list.add(Question(
+    "Pregunta 8?",
+    [
+      Answer("repuesta", true),
+      Answer("repuesta", false),
+    ],
+    "sounds/h.mp3",
   ));
 
   return list;

@@ -12,7 +12,7 @@ class AuthBackground extends StatelessWidget {
       height: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/wall.jpg'), fit: BoxFit.cover),
+            image: AssetImage('assets/images/wall.jpg'), fit: BoxFit.cover),
       ),
       child: Stack(
         children: [
