@@ -19,73 +19,50 @@ class LoginForm extends StatelessWidget {
         child: Column(children: [
           TextFormField(
               autocorrect: false,
-              keyboardType: TextInputType.emailAddress,
+              keyboardType: TextInputType.name,
               decoration: InputDecorations.authInputDecoration(
-                  hintText: 'john.doe@gmail.com',
-                  labelText: 'Correo electrónico',
-                  prefixIcon: Icons.alternate_email_rounded),
-              onChanged: (value) => loginForm.email = value,
-              validator: (value) => Functions.validateEmail(value!)),
-          sizeBoxing,
-          TextFormField(
-              autocorrect: false,
-              obscureText: true,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecorations.authInputDecoration(
-                  hintText: '******',
-                  labelText: 'Contraseña',
-                  prefixIcon: Icons.lock_outline),
-              onChanged: (value) => loginForm.password = value,
-              validator: (value) => Functions.validatePassword(value!)),
+                  hintText: 'tu nombre',
+                  labelText: 'Ingresa tu nombre',
+                  prefixIcon: Icons.supervised_user_circle),
+              onChanged: (value) => loginForm.name = value,
+              validator: (value) => Functions.validateName(value!)),
           sizeBoxing,
           MaterialButton(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            disabledColor: Colors.grey,
             elevation: 0,
-            color: Colors.lightBlue,
+            minWidth: 400,
+            height: 50,
+            disabledColor: Colors.grey,
+            color: Colors.indigoAccent,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
-              child: const Text(
-                'Ingresar',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            onPressed: loginForm.isLoading
-                ? null
-                : () async {
-                    FocusScope.of(context).unfocus();
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                child: const Text('Comenzar a jugar',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ))),
+            onPressed: () async {
+              FocusScope.of(context).unfocus();
 
-                    final authService =
-                        Provider.of<AuthService>(context, listen: false);
+              final authService =
+                  Provider.of<AuthService>(context, listen: false);
 
-                    if (!loginForm.isValidForm()) return;
+              if (!loginForm.isValidForm()) return;
 
-                    loginForm.isLoading = true;
+              loginForm.isLoading = true;
 
-                    final String? errorMessage = await authService.login(
-                        loginForm.email, loginForm.password);
+              final String? errorMessage =
+                  await authService.playGame(loginForm.name);
 
-                    if (errorMessage == null) {
-                      Navigator.pushReplacementNamed(context, 'home');
-                    } else {
-                      NotificationsService.showSnackbar(errorMessage);
-                      loginForm.isLoading = false;
-                    }
-                  },
+              if (errorMessage == null) {
+                Navigator.pushReplacementNamed(context, 'quiz');
+              } else {
+                loginForm.isLoading = false;
+              }
+            },
           ),
-          sizeBoxing,
-          TextButton(
-              onPressed: () =>
-                  Navigator.pushReplacementNamed(context, 'register'),
-              style: ButtonStyle(
-                  overlayColor:
-                      MaterialStateProperty.all(Colors.indigo.withOpacity(0.1)),
-                  shape: MaterialStateProperty.all(StadiumBorder())),
-              child: Text(
-                '¿Crear una nueva cuenta?',
-                style: TextStyle(fontSize: 18, color: Colors.black87),
-              )),
         ]));
   }
 }

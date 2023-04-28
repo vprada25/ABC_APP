@@ -6,16 +6,17 @@ class InputDecorations {
       required String labelText,
       IconData? prefixIcon}) {
     return InputDecoration(
-        enabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.deepPurple),
-        ),
+        filled: true,
+        fillColor: Colors.white,
+        border: const UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.indigoAccent, width: 2)),
         focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.deepPurple, width: 2)),
+            borderSide: BorderSide(color: Colors.indigoAccent, width: 4)),
         hintText: hintText,
         labelText: labelText,
-        labelStyle: const TextStyle(color: Colors.grey),
+        //labelStyle: const TextStyle(color: Colors.white),
         prefixIcon: prefixIcon != null
-            ? Icon(prefixIcon, color: Colors.lightBlue)
+            ? Icon(prefixIcon, color: Colors.indigoAccent)
             : null);
   }
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../components/components.dart';
+import '../providers/login_form_provider.dart';
 import '../widgets/widgets.dart';
 
 class InitialPlay extends StatelessWidget {
@@ -40,23 +43,14 @@ _containerNamePlayer(BuildContext context) {
             ),
           ),
           const SizedBox(height: 20),
-          const TextField(
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              hintText: "Ingrese su nombre",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(12)),
-              ),
-            ),
-          ),
+          ChangeNotifierProvider(
+              create: (_) => LoginFormProvider(), child: LoginForm()),
           const SizedBox(height: 20),
-          _buttonWidget(context)
         ],
       ));
 }
 
-_buttonWidget(BuildContext context) {
+/* _buttonWidget(BuildContext context) {
   return MaterialButton(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
     elevation: 0,
@@ -74,3 +68,4 @@ _buttonWidget(BuildContext context) {
         )),
   );
 }
+ */

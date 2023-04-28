@@ -117,7 +117,7 @@ class _QuizScreenState extends State<QuizScreen> {
           backgroundColor: isSelected ? Colors.orangeAccent : Colors.white,
           foregroundColor: isSelected ? Colors.white : Colors.black,
         ),
-        child: Text(answer.answerText),
+        child: Text(answer.answerText, style: const TextStyle(fontSize: 22)),
         onPressed: () {
           if (selectedAnswer == null) {
             if (answer.isCorrect) {
@@ -147,7 +147,8 @@ class _QuizScreenState extends State<QuizScreen> {
           backgroundColor: Colors.orangeAccent,
           foregroundColor: Colors.white,
         ),
-        child: Text(isLastQuestion ? "Enviar" : "Siguiente"),
+        child: Text(isLastQuestion ? "Enviar" : "Siguiente",
+            style: const TextStyle(fontSize: 26)),
         onPressed: () {
           if (isLastQuestion) {
             //display score
@@ -179,7 +180,8 @@ class _QuizScreenState extends State<QuizScreen> {
         style: TextStyle(color: isPassed ? Colors.green : Colors.redAccent),
       ),
       content: ElevatedButton(
-        child: const Text("Reiniciar Aprendizaje"),
+        child: const Text("Reiniciar Aprendizaje",
+            style: const TextStyle(fontSize: 20)),
         onPressed: () {
           Navigator.pushReplacementNamed(context, 'home');
           setState(() {

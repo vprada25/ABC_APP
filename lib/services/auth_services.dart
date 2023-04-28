@@ -54,6 +54,15 @@ class AuthService extends ChangeNotifier {
     }
   }
 
+  Future<String?> playGame(String name) async {
+    if (name != '') {
+      await storage.write(key: 'name', value: name);
+      return null;
+    } else {
+      return 'Ingresa tu nombre';
+    }
+  }
+
   Future logout() async {
     await storage.delete(key: 'token');
     return;
