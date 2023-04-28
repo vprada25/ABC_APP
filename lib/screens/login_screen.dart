@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:seminario_app/providers/login_form_provider.dart';
-import 'package:seminario_app/widgets/widgets.dart';
-import 'package:seminario_app/components/components.dart';
+import 'package:ABC/providers/login_form_provider.dart';
+import 'package:ABC/widgets/widgets.dart';
+import 'package:ABC/components/components.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

@@ -1,4 +1,4 @@
-import 'package:seminario_app/utils/constants.dart';
+import 'package:ABC/utils/constants.dart';
 
 class Functions {
   static validateEmail(String value) {

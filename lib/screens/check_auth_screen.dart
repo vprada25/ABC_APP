@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:seminario_app/screens/screens.dart';
+import 'package:ABC/screens/screens.dart';
 
-import 'package:seminario_app/services/services.dart';
+import 'package:ABC/services/services.dart';
 
 class CheckAuthScreen extends StatelessWidget {
   const CheckAuthScreen({super.key});

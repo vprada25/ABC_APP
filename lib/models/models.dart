@@ -1,1 +1,1 @@
-export 'package:seminario_app/models/question_model.dart';
+export 'package:ABC/models/question_model.dart';
