@@ -6,6 +6,7 @@ Aplicacion para el seminario de software educativo, en el cual se busca fortalec
 
 ```bash
 git clone https://github.com/vprada25/ABC_APP.git
+flutter create .
 ```
 
 ## Realizado por:
