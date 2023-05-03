@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class Question {
   final String questionText;
   final String audioPath;
@@ -18,78 +20,284 @@ List<Question> getQuestions() {
   //ADD questions and answer here
 
   list.add(Question(
-    "Pregunta 1?",
+    "¿cual es la pronunciacion correcta de la letra A?",
     [
-      Answer("repuesta", false),
-      Answer("repuesta", false),
-      Answer("repuesta", true),
-      Answer("repuesta", false),
+      Answer("ie", false),
+      Answer("hi", false),
+      Answer("ei", true),
+      Answer("bi", false),
     ],
     "sounds/a.mp3",
   ));
 
   list.add(Question(
-    "Pregunta 2?",
+    "¿la letra B se pronuncia?",
     [
-      Answer("repuesta", true),
-      Answer("repuesta", false),
-      Answer("repuesta", false),
-      Answer("repuesta", false),
+      Answer("bi", true),
+      Answer("hi", false),
+      Answer("ei", false),
+      Answer("ie", false),
     ],
     "sounds/b.mp3",
   ));
 
   list.add(Question(
-    "Pregunta 3?",
+    "¿la letra C se pronuncia?",
     [
-      Answer("repuesta", false),
-      Answer("repuesta", false),
-      Answer("repuesta", false),
-      Answer("repuesta", true),
+      Answer("ci", true),
+      Answer("si", false),
+      Answer("zi", false),
+      Answer("di", false),
     ],
     "sounds/c.mp3",
   ));
 
   list.add(Question(
-    "Pregunta 4?",
+    "¿cual letra se pronuncia 'di' en ingles?",
     [
-      Answer("repuesta", true),
-      Answer("repuesta", false),
+      Answer("D", true),
+      Answer("T", false),
+      Answer("B", false),
+      Answer("C", false),
     ],
     "sounds/d.mp3",
   ));
   list.add(Question(
-    "Pregunta 5?",
+    "¿cual letra se pronuncia 'i' en ingles?",
     [
-      Answer("repuesta", true),
-      Answer("repuesta", false),
+      Answer("I", false),
+      Answer("E", true),
+      Answer("A", false),
+      Answer("O", false),
     ],
     "sounds/e.mp3",
   ));
   list.add(Question(
-    "Pregunta 6?",
+    "¿cual letra se pronuncia 'ef' en ingles?",
     [
-      Answer("repuesta", true),
-      Answer("repuesta", false),
+      Answer("F", true),
+      Answer("E", false),
+      Answer("A", false),
+      Answer("O", false),
     ],
     "sounds/f.mp3",
   ));
   list.add(Question(
-    "Pregunta 7?",
+    "¿cual letra se pronuncia 'yi' en ingles?",
     [
-      Answer("repuesta", true),
-      Answer("repuesta", false),
+      Answer("G", true),
+      Answer("Y", false),
+      Answer("A", false),
+      Answer("O", false),
     ],
     "sounds/g.mp3",
   ));
   list.add(Question(
-    "Pregunta 8?",
+    "¿como se pronuncia la letra H?",
     [
-      Answer("repuesta", true),
-      Answer("repuesta", false),
+      Answer("eich", true),
+      Answer("hi", false),
+      Answer("ei", false),
+      Answer("bi", false),
     ],
     "sounds/h.mp3",
   ));
+  list.add(Question(
+    "¿cual letra se pronuncia 'ai' en ingles?",
+    [
+      Answer("I", true),
+      Answer("E", false),
+      Answer("A", false),
+      Answer("O", false),
+    ],
+    "sounds/i.mp3",
+  ));
+  list.add(Question(
+    "¿cual letra se pronuncia 'jei' en ingles?",
+    [
+      Answer("J", true),
+      Answer("Y", false),
+      Answer("A", false),
+      Answer("O", false),
+    ],
+    "sounds/j.mp3",
+  ));
+  list.add(Question(
+    "¿cual letra se pronuncia 'kei' en ingles?",
+    [
+      Answer("K", true),
+      Answer("Y", false),
+      Answer("A", false),
+      Answer("O", false),
+    ],
+    "sounds/k.mp3",
+  ));
+  list.add(Question(
+    "¿cual es la pronunciacion correcta de la letra L?",
+    [
+      Answer("el", true),
+      Answer("ou", false),
+      Answer("le", false),
+      Answer("ll", false),
+    ],
+    "sounds/l.mp3",
+  ));
+  list.add(Question(
+    "¿cual es la correcta pronunciacion de la letra M?",
+    [
+      Answer("em", true),
+      Answer("ou", false),
+      Answer("me", false),
+      Answer("mm", false),
+    ],
+    "sounds/m.mp3",
+  ));
+  list.add(Question(
+    "¿cual es la correcta pronunciacion de la letra N?",
+    [
+      Answer("en", true),
+      Answer("ou", false),
+      Answer("ne", false),
+      Answer("nn", false),
+    ],
+    "sounds/n.mp3",
+  ));
+  list.add(Question(
+    "¿cual es la correcta pronunciacion de la letra O?",
+    [
+      Answer("ou", true),
+      Answer("o", false),
+      Answer("e", false),
+      Answer("a", false),
+    ],
+    "sounds/o.mp3",
+  ));
+  list.add(Question(
+    "¿cual es la correcta pronunciacion de la letra P?",
+    [
+      Answer("pi", true),
+      Answer("ou", false),
+      Answer("pe", false),
+      Answer("pp", false),
+    ],
+    "sounds/p.mp3",
+  ));
+  list.add(Question(
+    "¿cual es la correcta pronunciacion de la letra Q?",
+    [
+      Answer("kiu", true),
+      Answer("ou", false),
+      Answer("qu", false),
+      Answer("qq", false),
+    ],
+    "sounds/q.mp3",
+  ));
+  list.add(Question(
+    "¿cual es la correcta pronunciacion de la letra R?",
+    [
+      Answer("ar", true),
+      Answer("ou", false),
+      Answer("re", false),
+      Answer("rr", false),
+    ],
+    "sounds/r.mp3",
+  ));
+  list.add(Question(
+    "¿cual es la correcta pronunciacion de la letra S?",
+    [
+      Answer("es", true),
+      Answer("ou", false),
+      Answer("se", false),
+      Answer("ss", false),
+    ],
+    "sounds/s.mp3",
+  ));
+  list.add(Question(
+    "¿cual es la correcta pronunciacion de la letra T?",
+    [
+      Answer("ti", true),
+      Answer("ou", false),
+      Answer("te", false),
+      Answer("tt", false),
+    ],
+    "sounds/t.mp3",
+  ));
+  list.add(Question(
+    "¿que letra se pronuncia 'iu' en ingles?",
+    [
+      Answer("U", true),
+      Answer("E", false),
+      Answer("A", false),
+      Answer("O", false),
+    ],
+    "sounds/u.mp3",
+  ));
+  list.add(Question(
+    "¿que letra se pronuncia 'uvi' en ingles?",
+    [
+      Answer("V", true),
+      Answer("Y", false),
+      Answer("A", false),
+      Answer("O", false),
+    ],
+    "sounds/v.mp3",
+  ));
+  list.add(Question(
+    "¿que letra se pronuncia 'dabliu' en ingles?",
+    [
+      Answer("W", true),
+      Answer("Y", false),
+      Answer("A", false),
+      Answer("O", false),
+    ],
+    "sounds/w.mp3",
+  ));
+  list.add(Question(
+    "¿que letra se pronuncia 'ex' en ingles?",
+    [
+      Answer("X", true),
+      Answer("E", false),
+      Answer("A", false),
+      Answer("O", false),
+    ],
+    "sounds/x.mp3",
+  ));
+  list.add(Question(
+    "¿que letra se pronuncia 'uai' en ingles?",
+    [
+      Answer("Y", true),
+      Answer("E", false),
+      Answer("A", false),
+      Answer("O", false),
+    ],
+    "sounds/y.mp3",
+  ));
+  list.add(Question(
+    "¿que letra se pronuncia 'set' en ingles?",
+    [
+      Answer("Z", true),
+      Answer("E", false),
+      Answer("A", false),
+      Answer("O", false),
+    ],
+    "sounds/z.mp3",
+  ));
 
   return list;
+}
+
+List<Question> getAnswerRandom(int rangeList, int rangeMax) {
+  List<Question> questionRandom = [];
+
+  int rangeMin = 0;
+
+  Random random = Random();
+
+  for (int i = 0; i < rangeList; i++) {
+    int index = rangeMin + random.nextInt(rangeMax - rangeMin + 1);
+
+    questionRandom.add(getQuestions()[index]);
+  }
+
+  return questionRandom;
 }

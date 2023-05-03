@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                 child: const Text(
-                  'Iniciar Aprendizaje',
+                  '¿Estas listo?',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
@@ -48,15 +48,15 @@ class HomeScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
                 child: const Text(
-                  'Aprender de nuevo',
+                  'Iniciar Aprendizaje',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ),
               onPressed: () {
-                /* final authService =
-                  Provider.of<AuthService>(context, listen: false);
-              await authService.logout();
-              Navigator.pushReplacementNamed(context, 'login'); */
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (_) => const VideoPlayerWidget(
+                      videoUrl: 'assets/video/learning.mp4'),
+                ));
               },
             ),
           ],

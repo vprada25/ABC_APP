@@ -11,10 +11,11 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  List<Question> questionList = getQuestions();
-  int currentQuestionIndex = 0;
+  List<Question> questionList = getAnswerRandom(5, getQuestions().length - 1);
+
   int score = 0;
   Answer? selectedAnswer;
+  int currentQuestionIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -172,24 +173,61 @@ class _QuizScreenState extends State<QuizScreen> {
       //pass if 60 %
       isPassed = true;
     }
-    String title = isPassed ? "Felicidades " : "Debes estudiar más";
+    String title = isPassed ? "Felicidades " : "Te falta un poco mas";
 
     return AlertDialog(
       title: Text(
-        title + " | Puntaje $score",
+        title,
         style: TextStyle(color: isPassed ? Colors.green : Colors.redAccent),
       ),
-      content: ElevatedButton(
-        child: const Text("Reiniciar Aprendizaje",
-            style: const TextStyle(fontSize: 20)),
-        onPressed: () {
-          Navigator.pushReplacementNamed(context, 'home');
-          setState(() {
-            currentQuestionIndex = 0;
-            score = 0;
-            selectedAnswer = null;
-          });
-        },
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            isPassed
+                ? "assets/images/celebration.png"
+                : "assets/images/sad.png",
+            width: 100,
+            height: 100,
+          ),
+          Text(
+            isPassed ? "estas aprendiendo, sigue así" : "sigue estudiando",
+            style: const TextStyle(fontSize: 22),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            "Has acertado: $score/${questionList.length}",
+            style: const TextStyle(fontSize: 22),
+          ),
+          const SizedBox(height: 16),
+          MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              disabledColor: Colors.grey,
+              elevation: 0,
+              minWidth: 400,
+              height: 50,
+              color: Colors.indigoAccent,
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, 'home');
+              },
+              child: const Text("Volver a aprender",
+                  style: TextStyle(color: Colors.white, fontSize: 20))),
+          const SizedBox(height: 16),
+          MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              disabledColor: Colors.grey,
+              elevation: 0,
+              minWidth: 400,
+              height: 50,
+              color: Colors.indigoAccent,
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, 'quiz');
+              },
+              child: const Text("Repetir prueba",
+                  style: TextStyle(color: Colors.white, fontSize: 20)))
+        ],
       ),
     );
   }
