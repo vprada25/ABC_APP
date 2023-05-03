@@ -46,12 +46,10 @@ class _QuizScreenState extends State<QuizScreen> {
             width: double.infinity,
             padding: const EdgeInsets.all(32),
             decoration: BoxDecoration(
-              color: Colors.orangeAccent,
+              color: Colors.orangeAccent.withOpacity(0.8),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(children: [
-              Image.asset("assets/images/logo_app.png",
-                  width: 100, height: 100),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -77,10 +75,12 @@ class _QuizScreenState extends State<QuizScreen> {
                   )
                 ],
               ),
+              Image.asset(questionList[currentQuestionIndex].imagePath,
+                  width: 80, height: 80),
               Text(
                 questionList[currentQuestionIndex].questionText,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
                 ),

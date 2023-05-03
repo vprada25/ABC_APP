@@ -4,8 +4,9 @@ class Question {
   final String questionText;
   final String audioPath;
   final List<Answer> answersList;
+  final String imagePath;
 
-  Question(this.questionText, this.answersList, this.audioPath);
+  Question(this.questionText, this.answersList, this.audioPath, this.imagePath);
 }
 
 class Answer {
@@ -28,6 +29,7 @@ List<Question> getQuestions() {
       Answer("bi", false),
     ],
     "sounds/a.mp3",
+    "assets/images/a.png",
   ));
 
   list.add(Question(
@@ -39,6 +41,7 @@ List<Question> getQuestions() {
       Answer("ie", false),
     ],
     "sounds/b.mp3",
+    "assets/images/b.png",
   ));
 
   list.add(Question(
@@ -50,6 +53,7 @@ List<Question> getQuestions() {
       Answer("di", false),
     ],
     "sounds/c.mp3",
+    "assets/images/c.png",
   ));
 
   list.add(Question(
@@ -61,6 +65,7 @@ List<Question> getQuestions() {
       Answer("C", false),
     ],
     "sounds/d.mp3",
+    "assets/images/d.png",
   ));
   list.add(Question(
     "¿cual letra se pronuncia 'i' en ingles?",
@@ -71,6 +76,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/e.mp3",
+    "assets/images/e.png",
   ));
   list.add(Question(
     "¿cual letra se pronuncia 'ef' en ingles?",
@@ -81,6 +87,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/f.mp3",
+    "assets/images/f.png",
   ));
   list.add(Question(
     "¿cual letra se pronuncia 'yi' en ingles?",
@@ -91,6 +98,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/g.mp3",
+    "assets/images/g.png",
   ));
   list.add(Question(
     "¿como se pronuncia la letra H?",
@@ -101,6 +109,7 @@ List<Question> getQuestions() {
       Answer("bi", false),
     ],
     "sounds/h.mp3",
+    "assets/images/h.png",
   ));
   list.add(Question(
     "¿cual letra se pronuncia 'ai' en ingles?",
@@ -111,6 +120,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/i.mp3",
+    "assets/images/i.png",
   ));
   list.add(Question(
     "¿cual letra se pronuncia 'jei' en ingles?",
@@ -121,6 +131,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/j.mp3",
+    "assets/images/j.png",
   ));
   list.add(Question(
     "¿cual letra se pronuncia 'kei' en ingles?",
@@ -131,6 +142,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/k.mp3",
+    "assets/images/k.png",
   ));
   list.add(Question(
     "¿cual es la pronunciacion correcta de la letra L?",
@@ -141,6 +153,7 @@ List<Question> getQuestions() {
       Answer("ll", false),
     ],
     "sounds/l.mp3",
+    "assets/images/l.png",
   ));
   list.add(Question(
     "¿cual es la correcta pronunciacion de la letra M?",
@@ -151,6 +164,7 @@ List<Question> getQuestions() {
       Answer("mm", false),
     ],
     "sounds/m.mp3",
+    "assets/images/m.png",
   ));
   list.add(Question(
     "¿cual es la correcta pronunciacion de la letra N?",
@@ -161,6 +175,7 @@ List<Question> getQuestions() {
       Answer("nn", false),
     ],
     "sounds/n.mp3",
+    "assets/images/n.png",
   ));
   list.add(Question(
     "¿cual es la correcta pronunciacion de la letra O?",
@@ -171,6 +186,7 @@ List<Question> getQuestions() {
       Answer("a", false),
     ],
     "sounds/o.mp3",
+    "assets/images/o.png",
   ));
   list.add(Question(
     "¿cual es la correcta pronunciacion de la letra P?",
@@ -181,6 +197,7 @@ List<Question> getQuestions() {
       Answer("pp", false),
     ],
     "sounds/p.mp3",
+    "assets/images/p.png",
   ));
   list.add(Question(
     "¿cual es la correcta pronunciacion de la letra Q?",
@@ -191,6 +208,7 @@ List<Question> getQuestions() {
       Answer("qq", false),
     ],
     "sounds/q.mp3",
+    "assets/images/q.png",
   ));
   list.add(Question(
     "¿cual es la correcta pronunciacion de la letra R?",
@@ -201,6 +219,7 @@ List<Question> getQuestions() {
       Answer("rr", false),
     ],
     "sounds/r.mp3",
+    "assets/images/r.png",
   ));
   list.add(Question(
     "¿cual es la correcta pronunciacion de la letra S?",
@@ -211,6 +230,7 @@ List<Question> getQuestions() {
       Answer("ss", false),
     ],
     "sounds/s.mp3",
+    "assets/images/s.png",
   ));
   list.add(Question(
     "¿cual es la correcta pronunciacion de la letra T?",
@@ -221,6 +241,7 @@ List<Question> getQuestions() {
       Answer("tt", false),
     ],
     "sounds/t.mp3",
+    "assets/images/t.png",
   ));
   list.add(Question(
     "¿que letra se pronuncia 'iu' en ingles?",
@@ -231,6 +252,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/u.mp3",
+    "assets/images/u.png",
   ));
   list.add(Question(
     "¿que letra se pronuncia 'uvi' en ingles?",
@@ -241,6 +263,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/v.mp3",
+    "assets/images/v.png",
   ));
   list.add(Question(
     "¿que letra se pronuncia 'dabliu' en ingles?",
@@ -251,6 +274,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/w.mp3",
+    "assets/images/w.png",
   ));
   list.add(Question(
     "¿que letra se pronuncia 'ex' en ingles?",
@@ -261,6 +285,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/x.mp3",
+    "assets/images/x.png",
   ));
   list.add(Question(
     "¿que letra se pronuncia 'uai' en ingles?",
@@ -271,6 +296,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/y.mp3",
+    "assets/images/y.png",
   ));
   list.add(Question(
     "¿que letra se pronuncia 'set' en ingles?",
@@ -281,6 +307,7 @@ List<Question> getQuestions() {
       Answer("O", false),
     ],
     "sounds/z.mp3",
+    "assets/images/z.png",
   ));
 
   return list;
