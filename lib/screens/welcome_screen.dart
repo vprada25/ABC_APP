@@ -23,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
 _infoWidget(BuildContext context) {
   return Container(
       alignment: Alignment.center,
-      width: 400,
+      width: 330,
       padding: const EdgeInsets.all(22),
       decoration: BoxDecoration(
         color: Colors.orangeAccent,
@@ -31,12 +31,13 @@ _infoWidget(BuildContext context) {
       ),
       child: Column(
         children: [
-          Image.asset("assets/logo_app.png", width: 100, height: 100),
+          Image.asset("assets/images/logo_app.png", width: 100, height: 100),
+          const SizedBox(height: 20),
           const Text(
             "Bienvenido a ABC App",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 30,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
           ),

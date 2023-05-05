@@ -25,20 +25,20 @@ class InitialPlay extends StatelessWidget {
 _containerNamePlayer(BuildContext context) {
   return Container(
       alignment: Alignment.center,
-      width: 400,
-      padding: const EdgeInsets.all(22),
+      width: 330,
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.orangeAccent,
         borderRadius: BorderRadius.circular(24),
       ),
       child: Column(
         children: [
-          Image.asset("assets/logo_app.png", width: 100, height: 100),
+          Image.asset("assets/images/logo_app.png", width: 100, height: 100),
           const Text(
-            "Estas Listo Para Jugar y Aprender?",
+            "Demuestra que tanto sabes",
             style: TextStyle(
               color: Colors.white,
-              fontSize: 26,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
             ),
           ),

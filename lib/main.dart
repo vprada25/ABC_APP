@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -33,11 +34,16 @@ class MyApp extends StatelessWidget {
         routes: {
           /*   'login': (context) => const LoginScreen(),
           'register': (context) => const RegisterScreen(), */
-          'home': (context) => const HomeScreen(),
-          'check': (context) => const CheckAuthScreen(),
-          'welcome': (context) => const WelcomeScreen(),
-          'initial': (context) => const InitialPlay(),
-          'quiz': (context) => const QuizScreen(),
+          'home': (context) => Bounce(
+              duration: const Duration(seconds: 5), child: const HomeScreen()),
+          /* 'check': (context) => const CheckAuthScreen(), */
+          'welcome': (context) => FadeInDown(
+              duration: const Duration(seconds: 1),
+              child: const WelcomeScreen()),
+          'initial': (context) => FadeInDown(
+              duration: const Duration(seconds: 1), child: const InitialPlay()),
+          'quiz': (context) => FadeInDown(
+              duration: const Duration(seconds: 1), child: const QuizScreen()),
         },
         theme: ThemeData.light().copyWith(
           scaffoldBackgroundColor: Colors.grey[300],

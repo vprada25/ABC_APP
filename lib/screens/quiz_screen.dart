@@ -184,9 +184,7 @@ class _QuizScreenState extends State<QuizScreen> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Image.asset(
-            isPassed
-                ? "assets/images/celebration.png"
-                : "assets/images/sad.png",
+            isPassed ? "assets/images/success.png" : "assets/images/failed.png",
             width: 100,
             height: 100,
           ),

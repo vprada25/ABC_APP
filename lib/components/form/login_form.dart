@@ -37,7 +37,7 @@ class LoginForm extends StatelessWidget {
             color: Colors.indigoAccent,
             child: Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 child: const Text('Comenzar a jugar',
                     style: TextStyle(
                       color: Colors.white,
