@@ -11,7 +11,7 @@ flutter create .
 
 ## Descargar APK
 
-![abc.apk](apk/abc.apk)
+[abc.apk](/apk/abc.apk)
 
 ## Realizado por:
 
