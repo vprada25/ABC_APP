@@ -20,7 +20,9 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     super.initState();
     _controller = VideoPlayerController.asset(widget.videoUrl)
       ..initialize().then((_) {
-        setState(() {});
+        setState(() {
+          _controller.play(); // Reproducir automáticamente el video
+        });
       });
   }
 
@@ -50,7 +52,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
         children: [
           FloatingActionButton(
               heroTag: 'btn0',
-              backgroundColor: Colors.indigoAccent,
+              tooltip: 'Volver al menu',
+              backgroundColor: Colors.lightGreen,
               onPressed: () {
                 Navigator.pop(context);
               },
