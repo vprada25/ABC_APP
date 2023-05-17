@@ -209,7 +209,7 @@ class _QuizScreenState extends State<QuizScreen> {
               onPressed: () {
                 Navigator.pushReplacementNamed(context, 'home');
               },
-              child: const Text("Volver a aprender",
+              child: const Text("Volver al menu",
                   style: TextStyle(color: Colors.white, fontSize: 20))),
           const SizedBox(height: 16),
           MaterialButton(
@@ -223,7 +223,7 @@ class _QuizScreenState extends State<QuizScreen> {
               onPressed: () {
                 Navigator.pushReplacementNamed(context, 'quiz');
               },
-              child: const Text("Repetir prueba",
+              child: const Text("Continuar jugando",
                   style: TextStyle(color: Colors.white, fontSize: 20)))
         ],
       ),
